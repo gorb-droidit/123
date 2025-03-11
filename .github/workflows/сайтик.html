@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аудиоплеер</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Аудиоплеер</h1>
+    <audio id="audio" src="tvorog.mp3"></audio>
+    <br>
+    <button onclick="playAudio()">▶ Воспроизвести</button>
+    <button onclick="pauseAudio()">⏸ Пауза</button>
+    <button onclick="stopAudio()">⏹ Остановить</button>
+
+    <script>
+        const audio = document.getElementById('audio');
+        
+        function playAudio() {
+            audio.play();
+        }
+        
+        function pauseAudio() {
+            audio.pause();
+        }
+        
+        function stopAudio() {
+            audio.pause();
+            audio.currentTime = 0;
+        }
+    </script>
+</body>
+</html>
